@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Panta Ilish",
+    "image": "https://i.ibb.co/Q6TdNdX/Panta-Ilish-960x720-jpg.webp",
+    "rating": "4",
+    "Price": "250",
+    "discription": "Panta Ilish is a traditional food that almost every Bangladeshi eats at the Pohela Boishakh Festival (the first day of Bangla year). It’s the most popular food in Bangladesh. We love this dish as it is a great symbol and celebration of our culture and tradition.It’s a platter of leftover rice soaked in water and served with fried hilsa, achar, and dal. People eat Panta Ilish in the morning of Pohela Boishakh and then take part in cultural programs. The flavorful, crispy, and delicious hilsa fish served with water-soaked cold rice and spicy bharta presents a combination of salty and chili tastes. You will love it after your first mouthful. Another fish, American shad, tastes like hilsa, so you can buy that and have yourself some Bengali pleasure."
+  },
+  {
+    "name": "Kacchi Biryani",
+    "image": "https://i.ibb.co/PZh2d5c/Kacchi-Biryani-1-960x540-jpg.webp",
+    "rating": "5",
+    "Price": "150",
+    "discription": "Kacchi Biryani is one of Bangladeshi people’s most loved foods. It is so loved, it is served at most festivals and special occasions, such as weddings, picnics, etc. I love this dish.The most popular biryani in Bangladesh is Dhaka Kacchi Biryani. You will always find the Dhaka street biryani stall crowded because of the huge demand for this food. The main ingredients are rice and marinated meat cooked in lots of spices, giving it its special taste. The spices are nutmeg, mace, pepper, cloves, cardamom, cinnamon, bay leaves, coriander, mint, ginger, onion, tomatoes, green chilies, and garlic. It is sometimes served with a boiled egg and salad."
+  },
+  {
+    "name": "Vuna Khichuri/ Khichuri",
+    "image": "https://i.ibb.co/0h7FB3f/Khichuri-960x960-jpg.webp",
+    "rating": "4.5",
+    "Price": "100",
+    "discription": "Khichuri is a dish made of rice and lentils (dal). Vuna Khichuri (roasted) is cooked with different ingredients and spices from normal Khichuri. It’s served with roasted meat and pickle. It’s one of the tastiest and best loved foods in Bangladesh. Seasoned with a dash of turmeric and salt and topped with ghee, Khuchuri makes an ideal lunch or dinner. But you can make it tastier and more “gourmet” by adding veggies, dried fruit, and meat or chicken. It’s a comforting food for rainy days, and very popular at family get togethers. "
+  },
+  {
+    "name": "Morog Polao",
+    "image": "https://i.ibb.co/Xj30hyM/Morog-Polao-1-960x540-jpg.webp",
+    "rating": "4",
+    "Price": "140",
+    "discription": "Polao is a rice dish which involves cooking a stock, and adding spices. Other varieties of this delicious, mouth-watering food are Morog Polao or Chicken Polao, which is Polao served with chicken.Polao and biryani are cooked with the same rice but they taste different because of the different variety of spices used. But when you are eating Morog Polao, you know you are not eating something ordinary. It has the taste of royalty, and is often eaten at celebrations and other special occasions. "
+  },
+  {
+    "name": "Haleem",
+    "image": "https://i.ibb.co/34VTjJJ/Haleem-960x960-jpg.webp",
+    "rating": "4",
+    "Price": "120",
+    "discription": "Haleem is an Arabic dish. It is a popular stew made with meat—usually beef or mutton—lentils, barley, and spices. It is sold on street stalls and in bazaars (markets) as a snack, and making haleem involves a lengthy and complex process. It can be served with mint, lemon juice, coriander leaves, fried onions, ginger root, and green chilies.Haleem is a high-calorie dish, providing protein from the meat and fiber and carbohydrates from the combinations of grains and pulses. This is quite possibly why the dish is so popular for breaking fast during Ramadan. "
+  },
+  {
+    "name": "Puchka",
+    "image": "https://i.ibb.co/Bc5YXhG/Puchka-960x960-jpg.webp",
+    "rating": "3.5",
+    "Price": "50",
+    "discription": "Probably the most loved snack and street food in the whole of Bangladesh is Puchka. It originated in India but has become popular in Bangladesh, Pakistan, and Nepal. Puchka is round or ball-shaped deep-fried, crisp flatbread which is served with mashed potato, dal, chaat masala, onion, and coriander.As soon as you smell a puchka, you know you are going to have a great taste experience. You get the perfect mix of cold, spicy, tart, sweet, and crunch. So popular is it, people will often hang out with friends at roadside puchka stalls. "
+  }
+]
