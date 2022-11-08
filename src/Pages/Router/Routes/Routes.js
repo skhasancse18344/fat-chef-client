@@ -7,6 +7,7 @@ import Main from "../../Layout/Main";
 import Login from "../../Login/Login";
 import SignUp from "../../SignUp/SignUp";
 import AddServices from "../../AddServices/AddServices";
+import ServiceDetails from "../../ServiceDetails/ServiceDetails";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,12 @@ const router = createBrowserRouter([
       {
         path: "/items",
         element: <Items></Items>,
-        loader: () => fetch("http://localhost:5000/items"),
+      },
+      {
+        path: "/items/:id",
+        element: <ServiceDetails></ServiceDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/items/${params?.id}`),
       },
       {
         path: "/login",

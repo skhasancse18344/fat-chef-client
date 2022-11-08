@@ -10,7 +10,7 @@ const BannerItem = ({ slide }) => {
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-24 top-1/4">
         <h1 className="text-6xl font-bold text-white">
-          A Best Place <br />
+          A Best Place for <br />
           Authentic & <br />
           Delecious Food
         </h1>

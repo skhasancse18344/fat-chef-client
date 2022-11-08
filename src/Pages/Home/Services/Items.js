@@ -1,8 +1,13 @@
-import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Items = () => {
-  const items = useLoaderData();
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/items")
+      .then((res) => res.json())
+      .then((data) => setItems(data));
+  }, []);
   return (
     <div>
       <h1 className=" my-16 text-6xl font-bold text-teal-500 text-center">
@@ -23,7 +28,7 @@ const Items = () => {
                 </p>
 
                 <div className="card-actions justify-end">
-                  <Link to={`/checkout/${item?._id}`}>
+                  <Link to={`/items/${item?._id}`}>
                     <button className="btn btn-primary">View Details</button>
                   </Link>
                 </div>
