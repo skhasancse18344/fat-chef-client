@@ -6,6 +6,7 @@ import Items from "../../Home/Services/Items";
 import Main from "../../Layout/Main";
 import Login from "../../Login/Login";
 import SignUp from "../../SignUp/SignUp";
+import AddServices from "../../AddServices/AddServices";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/addServices",
+        element: <AddServices></AddServices>,
       },
     ],
   },
