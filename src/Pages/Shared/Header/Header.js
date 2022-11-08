@@ -1,19 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../../assets/logo.png";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => console.error(err));
+  };
   const menuItems = (
     <>
-      <li className="font-semibold">
-        <Link to="/">Home</Link>
-      </li>
-      <li className="font-semibold">
-        <Link to="/">My Reviews</Link>
-      </li>
-      <li className="font-semibold">
-        <Link to="/addServices">Add Services</Link>
-      </li>
+      {user?.email ? (
+        <>
+          <li className="font-semibold">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="font-semibold">
+            <Link to="/">My Reviews</Link>
+          </li>
+          <li className="font-semibold">
+            <Link to="/addServices">Add Services</Link>
+          </li>
+        </>
+      ) : (
+        <li className="font-semibold">
+          <Link to="/">Home</Link>
+        </li>
+      )}
     </>
   );
 
@@ -53,15 +68,28 @@ const Header = () => {
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
       <div className="navbar-end">
-        <Link to={"/signup"}>
-          {" "}
-          <button className="btn btn-outline btn-warning mr-3">Sign Up</button>
-        </Link>
-
-        <button className="btn btn-outline btn-warning mr-3">Log Out</button>
-        <Link to={"/login"}>
-          <button className="btn btn-outline btn-warning">Log In</button>
-        </Link>
+        {user?.email ? (
+          <button
+            onClick={handleLogOut}
+            className="btn btn-outline btn-warning"
+          >
+            Log Out
+          </button>
+        ) : (
+          <div>
+            <Link to={"/signup"}>
+              {" "}
+              <button className="btn btn-outline btn-warning mr-3">
+                Sign Up
+              </button>
+            </Link>
+            <Link to={"/login"}>
+              <button className="btn btn-outline btn-warning mr-3">
+                Log In
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
