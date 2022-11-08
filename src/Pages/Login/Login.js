@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React from "react";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -6,6 +7,7 @@ import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
+  const { providerLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -23,6 +25,19 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((err) => console.error(err));
+  };
+
+  //Login With Google
+
+  const googleProvider = new GoogleAuthProvider();
+  const handleGoogleSingIn = () => {
+    providerLogin(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -66,11 +81,17 @@ const Login = () => {
             </div>
           </form>
           <p className="text-center">
-            New to Genius Car{" "}
+            New to Fat Chef{" "}
             <Link className="text-orange-600 font-bold" to="/signup">
               Sign Up
             </Link>{" "}
           </p>
+          <button
+            onClick={handleGoogleSingIn}
+            className="mt-6 btn btn-outline btn-warning w-6/12 mx-auto"
+          >
+            Sign In With Google
+          </button>
         </div>
       </div>
     </div>
