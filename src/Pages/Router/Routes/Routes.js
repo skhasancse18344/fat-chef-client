@@ -4,6 +4,8 @@ import Items from "../../Home/Services/Items";
 // import AllServices from "../../Home/Services/Items";
 
 import Main from "../../Layout/Main";
+import Login from "../../Login/Login";
+import SignUp from "../../SignUp/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
         path: "/items",
         element: <Items></Items>,
         loader: () => fetch("http://localhost:5000/items"),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
     ],
   },

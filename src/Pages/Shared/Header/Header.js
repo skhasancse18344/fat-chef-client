@@ -9,7 +9,10 @@ const Header = () => {
         <Link to="/">Home</Link>
       </li>
       <li className="font-semibold">
-        <Link to="/">Home</Link>
+        <Link to="/">Add Reviews</Link>
+      </li>
+      <li className="font-semibold">
+        <Link to="/">Add Services</Link>
       </li>
     </>
   );
@@ -50,7 +53,15 @@ const Header = () => {
         <ul className="menu menu-horizontal p-0">{menuItems}</ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-outline btn-warning">Log In</button>
+        <Link to={"/signup"}>
+          {" "}
+          <button className="btn btn-outline btn-warning mr-3">Sign Up</button>
+        </Link>
+
+        <button className="btn btn-outline btn-warning mr-3">Log Out</button>
+        <Link to={"/login"}>
+          <button className="btn btn-outline btn-warning">Log In</button>
+        </Link>
       </div>
     </div>
   );
