@@ -11,12 +11,12 @@ const ServiceDetails = () => {
   const [allReviews, setAllReviews] = useState([]);
   useEffect(() => {
     fetch(
-      `https://service-review-server-4ytx3fh66-skhasancse18344.vercel.app/reviews?service=${_id}`
+      `https://service-review-server-skhasancse18344.vercel.app/reviews?service=${_id}`
     )
       .then((res) => res.json())
       .then((data) => setAllReviews(data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [_id]);
   console.log(allReviews);
   return (
     <div className="my-20">
@@ -53,10 +53,19 @@ const ServiceDetails = () => {
 
         <ul className="menu bg-base-100 w-full p-2 rounded">
           {allReviews.map((data) => (
-            <li className=" bg-stone-800 text-white mt-6 py-10 w-full">
+            <li className=" bg-stone-800 text-white mt-6 py-2 w-full">
               <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
-                <img className="w-20 h-20" src={data?.userImage} alt="" />
-                <p>{data.message}</p>
+                <div>
+                  <img className="w-20 h-20" src={data?.userImage} alt="" />
+                  <p className="mt-4 text-xs">Date & Time : {data.time}</p>
+                </div>
+                <div>
+                  <p>Email : {data.customer}</p>
+                  <p className="mt-6">Message: {data.message}</p>
+                </div>
+                <div>
+                  <p>Rating : {data.updateRating}</p>
+                </div>
               </div>
             </li>
           ))}

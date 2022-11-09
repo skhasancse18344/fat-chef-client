@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 const Items = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://service-review-server-4ytx3fh66-skhasancse18344.vercel.app/items"
-    )
+    fetch("https://service-review-server-skhasancse18344.vercel.app/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);
