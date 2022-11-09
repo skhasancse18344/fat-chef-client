@@ -2,7 +2,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import React from "react";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import img from "../../assets/login/login.svg";
+
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
@@ -21,8 +21,24 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        const currentUser = {
+          email: user.email,
+        };
+        //Get Jwt Token
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("chefToken", data.token);
+          });
         form.reset();
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
       })
       .catch((err) => console.error(err));
   };
