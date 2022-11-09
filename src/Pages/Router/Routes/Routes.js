@@ -8,6 +8,8 @@ import Login from "../../Login/Login";
 import SignUp from "../../SignUp/SignUp";
 import AddServices from "../../AddServices/AddServices";
 import ServiceDetails from "../../ServiceDetails/ServiceDetails";
+import AddReview from "../../Reviews/AddReview";
+import MyReviews from "../../Reviews/MyReviews";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +28,9 @@ const router = createBrowserRouter([
         path: "/items/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/items/${params?.id}`),
+          fetch(
+            `https://service-review-server-ten.vercel.app/items/${params?.id}`
+          ),
       },
       {
         path: "/login",
@@ -39,6 +43,16 @@ const router = createBrowserRouter([
       {
         path: "/addServices",
         element: <AddServices></AddServices>,
+      },
+      {
+        path: "/addReview/:id",
+        element: <AddReview></AddReview>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/addReview/${params?.id}`),
+      },
+      {
+        path: "/myReviews",
+        element: <MyReviews></MyReviews>,
       },
     ],
   },
