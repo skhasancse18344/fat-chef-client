@@ -79,12 +79,12 @@ const Header = () => {
           <div>
             <Link to={"/signup"}>
               {" "}
-              <button className="btn btn-outline btn-warning mr-3">
+              <button className="btn btn-outline btn-xs btn-warning mr-3">
                 Sign Up
               </button>
             </Link>
             <Link to={"/login"}>
-              <button className="btn btn-outline btn-warning mr-3">
+              <button className="btn btn-xs btn-outline btn-warning mr-3">
                 Log In
               </button>
             </Link>

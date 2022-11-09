@@ -10,7 +10,9 @@ const ServiceDetails = () => {
   //All Reviews by Item
   const [allReviews, setAllReviews] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?service=${_id}`)
+    fetch(
+      `https://service-review-server-4ytx3fh66-skhasancse18344.vercel.app/reviews?service=${_id}`
+    )
       .then((res) => res.json())
       .then((data) => setAllReviews(data))
       .catch((err) => console.error(err));
@@ -18,8 +20,8 @@ const ServiceDetails = () => {
   console.log(allReviews);
   return (
     <div className="my-20">
-      <div className="card lg:card-side bg-base-100 shadow-xl h-96">
-        <img className="h-full" src={image} alt="Album" />
+      <div className="card lg:card-side bg-base-100 shadow-xl ">
+        <img className="h-96 w-3/4" src={image} alt="Album" />
 
         <div className="card-body">
           <h2 className="card-title font-bold text-4xl">{name}</h2>
@@ -38,8 +40,10 @@ const ServiceDetails = () => {
           </button>
         ) : (
           <div className="text-end mt-6">
-            <Link className="btn btn-outline" to={"/login"}>
-              Please Login for Add Review
+            <Link to={"/login"}>
+              <button className="btn btn-outline">
+                Please Login for Add Review
+              </button>
             </Link>{" "}
           </div>
         )}
@@ -49,8 +53,11 @@ const ServiceDetails = () => {
 
         <ul className="menu bg-base-100 w-full p-2 rounded">
           {allReviews.map((data) => (
-            <li className=" bg-stone-800 text-white mt-6 py-10">
-              <p>{data.message}</p>
+            <li className=" bg-stone-800 text-white mt-6 py-10 w-full">
+              <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+                <img className="w-20 h-20" src={data?.userImage} alt="" />
+                <p>{data.message}</p>
+              </div>
             </li>
           ))}
         </ul>

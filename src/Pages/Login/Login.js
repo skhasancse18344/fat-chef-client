@@ -85,7 +85,7 @@ const Login = () => {
           </p>
           <button
             onClick={handleGoogleSingIn}
-            className="mt-6 btn btn-outline btn-warning w-6/12 mx-auto"
+            className="mt-6 btn btn-outline  btn-warning w-6/12 mx-auto text-xs"
           >
             Sign In With Google
           </button>

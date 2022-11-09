@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 const Items = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    fetch("https://service-review-server-ten.vercel.app/items")
+    fetch(
+      "https://service-review-server-4ytx3fh66-skhasancse18344.vercel.app/items"
+    )
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);
@@ -16,9 +18,9 @@ const Items = () => {
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16">
         {items.map((item) => (
           <div key={item._id}>
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
+            <div className="card card-compact w-80 bg-base-100 shadow-xl">
               <figure>
-                <img className="w-96 h-80" src={item?.image} alt="Food" />
+                <img className="w-full h-80" src={item?.image} alt="Food" />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{item?.name}</h2>

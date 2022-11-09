@@ -1,12 +1,43 @@
 import React from "react";
 
 const AddServices = () => {
-  const handlePlaceOrder = (event) => {
+  const handleAddService = (event) => {
     event.preventDefault();
+    const form = event.target;
+    const name = form.productName.value;
+    const image = form.image.value;
+    const rating = form.rating.value;
+    const Price = form.Price.value;
+    const discription = form.discription.value;
+
+    const services = {
+      name,
+      image,
+      rating,
+      Price,
+      discription,
+    };
+    console.log(services);
+    fetch("http://localhost:5000/services", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(services),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          alert("One Service Added Successfully");
+        }
+      })
+      .catch((err) => console.error(err));
+    form.reset();
   };
   return (
     <div>
-      <form onSubmit={handlePlaceOrder}>
+      <form onSubmit={handleAddService}>
         <h2 className="text-4xl mt-40">Add our Services Here </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
@@ -19,7 +50,7 @@ const AddServices = () => {
           <input
             name="image"
             type="text"
-            placeholder="Image URL"
+            placeholder="Image URL ibb link"
             className="input input-ghost w-full  input-bordered"
           />
           <input

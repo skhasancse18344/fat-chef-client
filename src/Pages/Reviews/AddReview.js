@@ -5,7 +5,7 @@ import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 const AddReview = () => {
   const { _id, image, Price, name, discription } = useLoaderData();
   const { user } = useContext(AuthContext);
-  //   const {   metadata } = user;
+  console.log(user);
   const handleReviews = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -19,6 +19,7 @@ const AddReview = () => {
       serviceName: name,
       customer: user?.displayName,
       Price,
+      userImage: user?.photoURL,
       email: user?.email,
       message,
       photoURL: user?.photoURL,
