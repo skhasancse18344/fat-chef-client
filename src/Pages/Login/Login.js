@@ -25,7 +25,7 @@ const Login = () => {
           email: user.email,
         };
         //Get Jwt Token
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://service-review-server-skhasancse18344.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
