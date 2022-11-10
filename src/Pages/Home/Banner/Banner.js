@@ -24,7 +24,7 @@ const bannerData = [
     next: 1,
   },
 ];
-console.log(bannerData);
+// console.log(bannerData);
 
 const Banner = () => {
   return (

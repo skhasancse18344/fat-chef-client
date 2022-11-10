@@ -11,6 +11,7 @@ import ServiceDetails from "../../ServiceDetails/ServiceDetails";
 import AddReview from "../../Reviews/AddReview";
 import MyReviews from "../../Reviews/MyReviews";
 import PrivateRoute from "../../../PrivateRoute/PrivateRoute";
+import Blog from "../../Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
         path: "/items",

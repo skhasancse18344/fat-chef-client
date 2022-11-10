@@ -1,32 +1,34 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import UseTitle from "../../hook/UseTitle";
 
 const MyReviews = () => {
-  const { user, logOut } = useContext(AuthContext);
+  UseTitle("My Review");
+  const { user } = useContext(AuthContext);
   const [myReview, setMyReview] = useState([]);
+  // console.log(myReview);
 
   useEffect(() => {
     fetch(
-      `https://service-review-server-skhasancse18344.vercel.app/myReviews?email=${user?.email}`,
-      {
-        headers: {
-          authorizaton: `Bearer ${localStorage.getItem("chefToken")}`,
-        },
-      }
+      `https://service-review-server-skhasancse18344.vercel.app/myReviews?email=${user?.email}`
     )
-      .then((res) => {
-        if (res.status === 401 || res.status === 403) {
-          logOut();
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setMyReview(data);
-      })
+      // {
+      //   headers: {
+      //     authorizaton: `Bearer ${localStorage.getItem("chefToken")}`,
+      //   },
+      // }
+
+      .then((res) => res.json())
+      //   if (res.status === 401 || res.status === 403) {
+      //     return logOut();
+      //   }
+      //   return res.json();
+      // })
+      .then((data) => setMyReview(data))
       .catch((err) => console.error(err));
   }, [user?.email]);
   const handleDelete = (id) => {
-    console.log(id);
+    // console.log(id)
     const proceed = window.confirm("Are Sure You Want to Delete This Review");
     if (proceed) {
       fetch(
@@ -37,6 +39,11 @@ const MyReviews = () => {
       )
         .then((res) => res.json())
         .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("Deleted Successfully");
+            const remaining = myReview.filter((review) => review._id !== id);
+            setMyReview(remaining);
+          }
           console.log(data);
         });
     }

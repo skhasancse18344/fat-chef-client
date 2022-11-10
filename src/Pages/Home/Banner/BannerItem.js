@@ -9,7 +9,7 @@ const BannerItem = ({ slide }) => {
         <img src={image} alt="" className="w-full h-full rounded-xl" />
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-24 top-1/4">
-        <h1 className="text-6xl font-bold text-white hidden lg:block">
+        <h1 className="text-6xl font-bold font-mono text-white hidden lg:block">
           A Best Place for <br />
           Authentic & <br />
           Delecious Food

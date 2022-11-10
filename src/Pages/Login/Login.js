@@ -4,8 +4,10 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import UseTitle from "../../hook/UseTitle";
 
 const Login = () => {
+  UseTitle("Login");
   const { login } = useContext(AuthContext);
   const { providerLogin } = useContext(AuthContext);
   const navigate = useNavigate();

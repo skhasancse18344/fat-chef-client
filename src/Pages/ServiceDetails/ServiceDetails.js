@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import UseTitle from "../../hook/UseTitle";
 
 const ServiceDetails = () => {
+  UseTitle("Services Details");
   const { user } = useContext(AuthContext);
   const details = useLoaderData();
   const { _id, rating, image, Price, name, discription } = details;
@@ -53,7 +55,10 @@ const ServiceDetails = () => {
 
         <ul className="menu bg-base-100 w-full p-2 rounded">
           {allReviews.map((data) => (
-            <li className=" bg-stone-800 text-white mt-6 py-2 w-full">
+            <li
+              key={data?._id}
+              className=" bg-stone-800 text-white mt-6 py-2 w-full"
+            >
               <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
                 <div>
                   <img className="w-20 h-20" src={data?.userImage} alt="" />

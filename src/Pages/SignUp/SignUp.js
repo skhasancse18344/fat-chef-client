@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import UseTitle from "../../hook/UseTitle";
 

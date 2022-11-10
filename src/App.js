@@ -2,6 +2,8 @@
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
 import router from "./Pages/Router/Routes/Routes";
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
 
 function App() {
   return (

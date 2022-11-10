@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 import { Link } from "react-router-dom";
+import UseTitle from "../../../hook/UseTitle";
 
 const Items = () => {
+  UseTitle("All Items");
   const [items, setItems] = useState([]);
   useEffect(() => {
     fetch("https://service-review-server-skhasancse18344.vercel.app/items")
@@ -18,7 +21,17 @@ const Items = () => {
           <div key={item._id}>
             <div className="card card-compact w-80 bg-base-100 shadow-xl">
               <figure>
-                <img className="w-full h-80" src={item?.image} alt="Food" />
+                <PhotoProvider>
+                  <div className="foo">
+                    <PhotoView key={item?._id} src={item?.image}>
+                      <img
+                        className="w-full h-80"
+                        src={item?.image}
+                        alt="Food"
+                      />
+                    </PhotoView>
+                  </div>
+                </PhotoProvider>
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{item?.name}</h2>
