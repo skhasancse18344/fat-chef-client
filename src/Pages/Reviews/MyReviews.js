@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import UseTitle from "../../hook/UseTitle";
 
@@ -81,7 +82,9 @@ const MyReviews = () => {
               </h2>
 
               <div className="card-actions mt-6">
-                <button className="btn btn-xs mr-6 ">Update</button>
+                <Link to={`/UpdateReview/${review?._id}`}>
+                  <button className="btn btn-xs mr-6 ">Update</button>
+                </Link>
 
                 <button
                   className="btn btn-xs"

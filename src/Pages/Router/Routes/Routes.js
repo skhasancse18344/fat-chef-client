@@ -12,6 +12,7 @@ import AddReview from "../../Reviews/AddReview";
 import MyReviews from "../../Reviews/MyReviews";
 import PrivateRoute from "../../../PrivateRoute/PrivateRoute";
 import Blog from "../../Blog/Blog";
+import UpdateReview from "../../Reviews/UpdateReview";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,14 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(
             `https://service-review-server-skhasancse18344.vercel.app/addReview/${params?.id}`
+          ),
+      },
+      {
+        path: "/UpdateReview/:id",
+        element: <UpdateReview></UpdateReview>,
+        loader: ({ params }) =>
+          fetch(
+            `https://service-review-server-skhasancse18344.vercel.app/UpdateReview/${params.id}`
           ),
       },
       {
