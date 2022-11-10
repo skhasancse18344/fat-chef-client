@@ -19,7 +19,7 @@ const ServiceDetails = () => {
       .then((data) => setAllReviews(data))
       .catch((err) => console.error(err));
   }, [_id]);
-  console.log(allReviews);
+
   return (
     <div className="my-20">
       <div className="card lg:card-side bg-base-100 shadow-xl ">
@@ -56,7 +56,7 @@ const ServiceDetails = () => {
         <ul className="menu bg-base-100 w-full p-2 rounded">
           {allReviews.map((data) => (
             <li
-              key={data?._id}
+              key={data._id}
               className=" bg-stone-800 text-white mt-6 py-2 w-full"
             >
               <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
