@@ -13,11 +13,13 @@ import MyReviews from "../../Reviews/MyReviews";
 import PrivateRoute from "../../../PrivateRoute/PrivateRoute";
 import Blog from "../../Blog/Blog";
 import UpdateReview from "../../Reviews/UpdateReview";
+import ErrorPage from "../../ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
