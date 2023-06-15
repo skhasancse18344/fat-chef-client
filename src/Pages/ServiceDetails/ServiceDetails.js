@@ -62,14 +62,14 @@ const ServiceDetails = () => {
               <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
                 <div>
                   <img className="w-20 h-20" src={data?.userImage} alt="" />
-                  <p className="mt-4 text-xs">Date & Time : {data.time}</p>
+                  <p className="mt-4 text-xs">Date & Time : {data?.time}</p>
                 </div>
                 <div>
-                  <p>Email : {data.customer}</p>
+                  <p>Email : {data?.email}</p>
                   <p className="mt-6">Message: {data.message}</p>
                 </div>
                 <div>
-                  <p>Rating : {data.updateRating}</p>
+                  <p>Rating : {data?.updateRating}</p>
                 </div>
               </div>
             </li>

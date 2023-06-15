@@ -17,8 +17,8 @@ const Services = () => {
   }, []);
   return (
     <div className="my-20">
-      <h1 className="mb-16 text-6xl font-bold font-mono text-teal-500 text-center">
-        What Type of Food I Delivered ...!!!
+      <h1 className="mb-16 text-5xl font-bold  text-center uppercase">
+        What Type Of Food We Delivered ...!!!
       </h1>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (

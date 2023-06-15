@@ -1,7 +1,6 @@
 import React from "react";
 import img1 from "../../../assets/img-1.jpg";
-import img2 from "../../../assets/img-2.jpg";
-import img3 from "../../../assets/img-3.jpg";
+
 import BannerItem from "./BannerItem";
 
 const bannerData = [
@@ -12,13 +11,13 @@ const bannerData = [
     id: 1,
   },
   {
-    image: img2,
+    image: img1,
     prev: 1,
     next: 3,
     id: 2,
   },
   {
-    image: img3,
+    image: img1,
     prev: 2,
     id: 3,
     next: 1,
